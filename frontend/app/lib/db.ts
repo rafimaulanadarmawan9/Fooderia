@@ -1,11 +1,16 @@
 import mysql from 'mysql2/promise';
 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST || process.env.MYSQLHOST,
-  user: process.env.DB_USER || process.env.MYSQLUSER,
-  password: process.env.DB_PASSWORD || process.env.MYSQLPASSWORD,
-  database: process.env.DB_NAME || process.env.MYSQLDATABASE,
-  port: Number(process.env.DB_PORT || process.env.MYSQLPORT || 3306),
-});
+// Cek apakah URL publik Railway tersedia (saat online di Vercel)
+const connectionString = process.env.MYSQL_PUBLIC_URL || process.env.DATABASE_URL;
+
+const pool = connectionString
+  ? mysql.createPool(connectionString) // Menggunakan Overload 1 (String URL)
+  : mysql.createPool({                 // Menggunakan Overload 2 (Object Config untuk lokal)
+      host: process.env.DB_HOST || 'localhost',
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASSWORD || '',
+      database: process.env.DB_NAME || 'fooderia',
+      port: Number(process.env.DB_PORT || 3306),
+    });
 
 export default pool;

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff5f8; /* Pink sangat lembut untuk background */
+  --background: #fce7f3; /* Pink muda yang lebih nyata dan manis */
   --foreground: #2d1b24; /* Teks warna gelap yang senada */
 }
 
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1a0f14; /* Mode gelap dengan nuansa pink gelap yang elegan */
+    --background: #2b121c; /* Mode gelap bernuansa pink tua */
     --foreground: #fce7f3;
   }
 }

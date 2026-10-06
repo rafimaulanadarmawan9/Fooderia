@@ -301,7 +301,11 @@ export default function FooderiaSecureApp() {
             <h2 className="text-lg font-bold mb-4 text-slate-200">Katalog Menu</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {menus.map((item: any) => (
-                <div key={item.id} onClick={() => addToCart(item)} className="bg-slate-800 border border-slate-700/60 p-4 rounded-2xl cursor-pointer hover:border-orange-500 transition-all group">
+                <div 
+                  key={item.id} 
+                  onClick={() => addToCart(item)} 
+                  className="bg-slate-800 border border-slate-700/60 p-4 rounded-2xl cursor-pointer hover:border-orange-500 transition-all transform active:scale-95 duration-100 group"
+                >
                   <div className="text-3xl mb-2">{item.icon}</div>
                   <h3 className="font-bold text-sm text-slate-200">{item.nama}</h3>
                   <p className="text-orange-400 font-black text-sm mt-1">Rp {formatRupiahDisplay(item.harga)}</p>
@@ -407,7 +411,7 @@ export default function FooderiaSecureApp() {
                     <span className="font-bold text-white text-sm">{trx.id_transaksi}</span>
                     <span className="bg-orange-500/10 text-orange-400 text-[10px] px-2 py-0.5 rounded font-semibold">{trx.metode}</span>
                   </div>
-                  <p className="text-xs text-slate-400 mt-1">Pelanggan: <strong className="text-slate-200">{trx.pelanggan}</strong> • {trx.waktu}</p>
+                  <p className="text-xs text-slate-400 mt-1">Pelanggan: <strong className="text-slate-200">{trx.pelanggan}</strong> | {trx.waktu}</p>
                 </div>
                 <div className="text-right">
                   <p className="font-black text-emerald-400 text-base">Rp {formatRupiahDisplay(trx.total)}</p>

@@ -29,7 +29,6 @@ export default function FooderiaSecureApp() {
   const [uangTunaiDisplay, setUangTunaiDisplay] = useState('');
   const [uangTunaiNilai, setUangTunaiNilai] = useState(0);
 
-  // State Form Menu Baru (Harga Display & Harga Nilai Asli)
   const [formMenu, setFormMenu] = useState({ nama: '', kategori: 'Makanan Utama', stok: '', status: 'Tersedia', icon: '🍲' });
   const [hargaMenuDisplay, setHargaMenuDisplay] = useState('');
   const [hargaMenuNilai, setHargaMenuNilai] = useState(0);
@@ -180,46 +179,46 @@ export default function FooderiaSecureApp() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4 relative">
+      <div className="min-h-screen bg-pink-50 flex items-center justify-center p-4 relative">
         {notification && (
-          <div className={`fixed top-6 z-50 px-6 py-3.5 rounded-2xl shadow-2xl border text-sm font-bold flex items-center gap-3 transition-all animate-bounce ${notification.type === 'success' ? 'bg-emerald-950/90 border-emerald-500/30 text-emerald-300' : 'bg-red-950/90 border-red-500/30 text-red-300'}`}>
+          <div className={`fixed top-6 z-50 px-6 py-3.5 rounded-2xl shadow-2xl border text-sm font-bold flex items-center gap-3 transition-all animate-bounce ${notification.type === 'success' ? 'bg-pink-900 border-pink-400 text-pink-100' : 'bg-red-900 border-red-400 text-red-100'}`}>
             <span>{notification.type === 'success' ? '✨' : '⚠️'}</span>
             {notification.message}
           </div>
         )}
 
-        <div className="bg-slate-900 border border-slate-800 p-8 rounded-3xl w-full max-w-md shadow-2xl">
+        <div className="bg-white border border-pink-200 p-8 rounded-3xl w-full max-w-md shadow-2xl">
           <div className="text-center mb-8 flex flex-col items-center">
             <div className="relative w-16 h-16 mb-3">
               <Image src="/logo.png" alt="Logo Fooderia" fill className="object-contain" priority />
             </div>
-            <h1 className="text-2xl font-black text-white mt-1">FOODERIA PORTAL</h1>
-            <p className="text-xs text-slate-400 mt-1">Silakan login sesuai hak akses</p>
+            <h1 className="text-2xl font-black text-pink-700 mt-1">FOODERIA PORTAL</h1>
+            <p className="text-xs text-gray-500 mt-1">Silakan login sesuai hak akses</p>
           </div>
 
           {loginError && (
-            <div className="mb-4 bg-red-500/10 border border-red-500/20 text-red-400 text-xs p-3.5 rounded-2xl text-center font-semibold flex items-center justify-center gap-2">
+            <div className="mb-4 bg-pink-100 border border-pink-200 text-pink-700 text-xs p-3.5 rounded-2xl text-center font-semibold flex items-center justify-center gap-2">
               <span>⚠️</span> {loginError}
             </div>
           )}
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="text-xs font-bold text-slate-400 uppercase">Username</label>
-              <input type="text" required value={loginForm.username} onChange={(e) => setLoginForm({...loginForm, username: e.target.value})} placeholder="admin atau kasir" className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-orange-500" />
+              <label className="text-xs font-bold text-gray-600 uppercase">Username</label>
+              <input type="text" required value={loginForm.username} onChange={(e) => setLoginForm({...loginForm, username: e.target.value})} placeholder="admin atau kasir" className="w-full mt-1 bg-white border border-pink-200 rounded-xl p-3 text-sm text-gray-800 focus:outline-none focus:border-pink-500" />
             </div>
             <div>
-              <label className="text-xs font-bold text-slate-400 uppercase">Password</label>
-              <input type="password" required value={loginForm.password} onChange={(e) => setLoginForm({...loginForm, password: e.target.value})} placeholder="••••••" className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-orange-500" />
+              <label className="text-xs font-bold text-gray-600 uppercase">Password</label>
+              <input type="password" required value={loginForm.password} onChange={(e) => setLoginForm({...loginForm, password: e.target.value})} placeholder="••••••" className="w-full mt-1 bg-white border border-pink-200 rounded-xl p-3 text-sm text-gray-800 focus:outline-none focus:border-pink-500" />
             </div>
-            <button type="submit" className="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all mt-2">
+            <button type="submit" className="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all mt-2">
               Masuk ke Sistem
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
-            <p>💡 Password default: <code className="text-orange-400">123</code></p>
-            <p className="mt-1">Akun Admin: <code className="text-orange-400">admin</code> | Akun Kasir: <code className="text-orange-400">kasir</code></p>
+          <div className="mt-6 pt-6 border-t border-pink-100 text-center text-xs text-gray-500">
+            <p>💡 Password default: <code className="text-pink-600 font-bold">123</code></p>
+            <p className="mt-1">Akun Admin: <code className="text-pink-600 font-bold">admin</code> | Akun Kasir: <code className="text-pink-600 font-bold">kasir</code></p>
           </div>
         </div>
       </div>
@@ -227,35 +226,35 @@ export default function FooderiaSecureApp() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans p-6 lg:p-10 relative">
+    <div className="min-h-screen bg-pink-50/60 text-gray-800 font-sans p-6 lg:p-10 relative">
       {notification && (
-        <div className={`fixed top-6 right-6 z-50 px-6 py-3.5 rounded-2xl shadow-2xl border text-sm font-bold flex items-center gap-3 transition-all animate-bounce ${notification.type === 'success' ? 'bg-emerald-950/95 border-emerald-500/30 text-emerald-300' : 'bg-red-950/95 border-red-500/30 text-red-300'}`}>
+        <div className={`fixed top-6 right-6 z-50 px-6 py-3.5 rounded-2xl shadow-2xl border text-sm font-bold flex items-center gap-3 transition-all animate-bounce ${notification.type === 'success' ? 'bg-pink-900 border-pink-400 text-pink-100' : 'bg-red-900 border-red-400 text-red-100'}`}>
           <span>{notification.type === 'success' ? '✨' : '⚠️'}</span>
           {notification.message}
         </div>
       )}
 
-      <header className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-6">
+      <header className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-pink-200 pb-6">
         <div className="flex items-center gap-4">
-          <div className="relative w-12 h-12 bg-slate-800 p-2 rounded-2xl border border-slate-700 flex items-center justify-center">
+          <div className="relative w-12 h-12 bg-white p-2 rounded-2xl border border-pink-200 flex items-center justify-center shadow-sm">
             <Image src="/logo.png" alt="Logo Fooderia" width={36} height={36} className="object-contain" />
           </div>
           <div>
-            <h1 className="text-3xl font-black tracking-wider bg-gradient-to-r from-orange-400 to-amber-200 bg-clip-text text-transparent">FOODERIA ENTERPRISE</h1>
-            <p className="text-sm text-slate-400 mt-1">Sistem Terproteksi Role-Based Access Control (RBAC)</p>
+            <h1 className="text-3xl font-black tracking-wider text-pink-700">FOODERIA ENTERPRISE</h1>
+            <p className="text-sm text-gray-500 mt-1">Sistem Terproteksi Role-Based Access Control (RBAC)</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <div className="bg-slate-800 px-4 py-2 rounded-2xl border border-slate-700 flex items-center gap-3">
-            <div className="h-8 w-8 rounded-full bg-orange-600 flex items-center justify-center font-bold text-white text-xs">
+          <div className="bg-white px-4 py-2 rounded-2xl border border-pink-200 flex items-center gap-3 shadow-sm">
+            <div className="h-8 w-8 rounded-full bg-pink-600 flex items-center justify-center font-bold text-white text-xs">
               {user.nama.charAt(0)}
             </div>
             <div>
-              <p className="text-xs font-bold text-white">{user.nama}</p>
-              <p className="text-[10px] text-orange-400 uppercase tracking-wider">{user.role}</p>
+              <p className="text-xs font-bold text-gray-800">{user.nama}</p>
+              <p className="text-[10px] text-pink-600 uppercase tracking-wider font-semibold">{user.role}</p>
             </div>
           </div>
-          <button onClick={() => setUser(null)} className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all">
+          <button onClick={() => setUser(null)} className="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all">
             Logout
           </button>
         </div>
@@ -263,32 +262,32 @@ export default function FooderiaSecureApp() {
 
       {isAdmin && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-slate-800/60 border border-slate-700/60 p-6 rounded-3xl shadow-xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Total Omset Perusahaan</p>
-            <p className="text-3xl font-black text-emerald-400 mt-2">Rp {formatRupiahDisplay(summary.total_omset)}</p>
+          <div className="bg-white border border-pink-200 p-6 rounded-3xl shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-wider text-gray-500">Total Omset Perusahaan</p>
+            <p className="text-3xl font-black text-pink-600 mt-2">Rp {formatRupiahDisplay(summary.total_omset)}</p>
           </div>
-          <div className="bg-slate-800/60 border border-slate-700/60 p-6 rounded-3xl shadow-xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Total Transaksi Selesai</p>
-            <p className="text-3xl font-black text-orange-400 mt-2">{summary.total_transaksi} <span className="text-sm text-slate-400 font-normal">Pesanan</span></p>
+          <div className="bg-white border border-pink-200 p-6 rounded-3xl shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-wider text-gray-500">Total Transaksi Selesai</p>
+            <p className="text-3xl font-black text-pink-700 mt-2">{summary.total_transaksi} <span className="text-sm text-gray-500 font-normal">Pesanan</span></p>
           </div>
-          <div className="bg-slate-800/60 border border-slate-700/60 p-6 rounded-3xl shadow-xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Pegawai Aktif</p>
-            <p className="text-3xl font-black text-indigo-400 mt-2">{staff.length} <span className="text-sm text-slate-400 font-normal">Orang</span></p>
+          <div className="bg-white border border-pink-200 p-6 rounded-3xl shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-wider text-gray-500">Pegawai Aktif</p>
+            <p className="text-3xl font-black text-pink-600 mt-2">{staff.length} <span className="text-sm text-gray-500 font-normal">Orang</span></p>
           </div>
         </div>
       )}
 
       <div className="flex gap-3 mb-8 overflow-x-auto">
-        <button onClick={() => setActiveTab('pos')} className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all ${activeTab === 'pos' ? 'bg-orange-600 text-white shadow-lg' : 'bg-slate-800 text-slate-400'}`}>
+        <button onClick={() => setActiveTab('pos')} className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all shadow-sm ${activeTab === 'pos' ? 'bg-pink-600 text-white' : 'bg-white text-gray-600 border border-pink-200 hover:bg-pink-50'}`}>
           🛒 Kasir & Transaksi
         </button>
 
         {isAdmin && (
           <>
-            <button onClick={() => setActiveTab('admin-report')} className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all ${activeTab === 'admin-report' ? 'bg-orange-600 text-white shadow-lg' : 'bg-slate-800 text-slate-400'}`}>
+            <button onClick={() => setActiveTab('admin-report')} className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all shadow-sm ${activeTab === 'admin-report' ? 'bg-pink-600 text-white' : 'bg-white text-gray-600 border border-pink-200 hover:bg-pink-50'}`}>
               📊 Laporan Pendapatan & Riwayat
             </button>
-            <button onClick={() => setActiveTab('menu-manager')} className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all ${activeTab === 'menu-manager' ? 'bg-orange-600 text-white shadow-lg' : 'bg-slate-800 text-slate-400'}`}>
+            <button onClick={() => setActiveTab('menu-manager')} className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all shadow-sm ${activeTab === 'menu-manager' ? 'bg-pink-600 text-white' : 'bg-white text-gray-600 border border-pink-200 hover:bg-pink-50'}`}>
               ➕ Kelola Menu & Stok
             </button>
           </>
@@ -297,40 +296,40 @@ export default function FooderiaSecureApp() {
 
       {activeTab === 'pos' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-7 bg-slate-800/45 border border-slate-800 p-6 rounded-3xl">
-            <h2 className="text-lg font-bold mb-4 text-slate-200">Katalog Menu</h2>
+          <div className="lg:col-span-7 bg-white border border-pink-200 p-6 rounded-3xl shadow-sm">
+            <h2 className="text-lg font-bold mb-4 text-gray-800">Katalog Menu</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {menus.map((item: any) => (
                 <div 
                   key={item.id} 
                   onClick={() => addToCart(item)} 
-                  className="bg-slate-800 border border-slate-700/60 p-4 rounded-2xl cursor-pointer hover:border-orange-500 transition-all transform active:scale-95 duration-100 group"
+                  className="bg-pink-50/40 border border-pink-200 p-4 rounded-2xl cursor-pointer hover:border-pink-500 hover:bg-pink-50 transition-all transform active:scale-95 duration-100 group shadow-sm"
                 >
                   <div className="text-3xl mb-2">{item.icon}</div>
-                  <h3 className="font-bold text-sm text-slate-200">{item.nama}</h3>
-                  <p className="text-orange-400 font-black text-sm mt-1">Rp {formatRupiahDisplay(item.harga)}</p>
+                  <h3 className="font-bold text-sm text-gray-800">{item.nama}</h3>
+                  <p className="text-pink-600 font-black text-sm mt-1">Rp {formatRupiahDisplay(item.harga)}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-slate-800/45 border border-slate-800 p-6 rounded-3xl flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-white border border-pink-200 p-6 rounded-3xl flex flex-col justify-between shadow-sm">
             <div>
-              <h2 className="text-lg font-bold mb-4 text-slate-200">Keranjang Kasir</h2>
+              <h2 className="text-lg font-bold mb-4 text-gray-800">Keranjang Kasir</h2>
               
               <div className="space-y-3 mb-4">
                 <div>
-                  <label className="text-xs font-bold text-slate-400 uppercase">Nama Pelanggan</label>
-                  <input type="text" value={namaPelanggan} onChange={(e) => setNamaPelanggan(e.target.value)} placeholder="Contoh: Budi Santoso" className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-orange-500" />
+                  <label className="text-xs font-bold text-gray-600 uppercase">Nama Pelanggan</label>
+                  <input type="text" value={namaPelanggan} onChange={(e) => setNamaPelanggan(e.target.value)} placeholder="Contoh: Budi Santoso" className="w-full mt-1 bg-white border border-pink-200 rounded-xl p-3 text-sm text-gray-800 focus:outline-none focus:border-pink-500" />
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-slate-400 uppercase">Metode Pembayaran</label>
+                  <label className="text-xs font-bold text-gray-600 uppercase">Metode Pembayaran</label>
                   <div className="grid grid-cols-2 gap-3 mt-1">
-                    <button type="button" onClick={() => setMetodeBayar('QRIS')} className={`p-3 rounded-xl border text-sm font-bold transition-all ${metodeBayar === 'QRIS' ? 'bg-orange-600 border-orange-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400'}`}>
+                    <button type="button" onClick={() => setMetodeBayar('QRIS')} className={`p-3 rounded-xl border text-sm font-bold transition-all shadow-sm ${metodeBayar === 'QRIS' ? 'bg-pink-600 border-pink-500 text-white' : 'bg-white border-pink-200 text-gray-600 hover:bg-pink-50'}`}>
                       📱 QRIS
                     </button>
-                    <button type="button" onClick={() => setMetodeBayar('Cash')} className={`p-3 rounded-xl border text-sm font-bold transition-all ${metodeBayar === 'Cash' ? 'bg-orange-600 border-orange-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400'}`}>
+                    <button type="button" onClick={() => setMetodeBayar('Cash')} className={`p-3 rounded-xl border text-sm font-bold transition-all shadow-sm ${metodeBayar === 'Cash' ? 'bg-pink-600 border-pink-500 text-white' : 'bg-white border-pink-200 text-gray-600 hover:bg-pink-50'}`}>
                       💵 Cash (Tunai)
                     </button>
                   </div>
@@ -338,32 +337,32 @@ export default function FooderiaSecureApp() {
 
                 {metodeBayar === 'Cash' && (
                   <div>
-                    <label className="text-xs font-bold text-slate-400 uppercase">Uang Tunai Diterima</label>
+                    <label className="text-xs font-bold text-gray-600 uppercase">Uang Tunai Diterima</label>
                     <div className="relative mt-1">
-                      <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 font-bold text-sm">Rp</span>
+                      <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400 font-bold text-sm">Rp</span>
                       <input 
                         type="text" 
                         value={uangTunaiDisplay} 
                         onChange={handleUangTunaiChange} 
                         placeholder="50.000" 
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 pl-10 pr-3 text-sm text-white focus:outline-none focus:border-orange-500 font-semibold" 
+                        className="w-full bg-white border border-pink-200 rounded-xl py-3 pl-10 pr-3 text-sm text-gray-800 focus:outline-none focus:border-pink-500 font-semibold" 
                       />
                     </div>
                   </div>
                 )}
               </div>
 
-              <div className="space-y-2 max-h-36 overflow-y-auto mb-4 pr-1 border-t border-slate-800 pt-3">
+              <div className="space-y-2 max-h-36 overflow-y-auto mb-4 pr-1 border-t border-pink-100 pt-3">
                 {cart.length === 0 ? (
-                  <p className="text-sm text-slate-500 text-center py-4">Keranjang masih kosong.</p>
+                  <p className="text-sm text-gray-400 text-center py-4">Keranjang masih kosong.</p>
                 ) : (
                   cart.map((c, i) => (
-                    <div key={i} className="flex justify-between items-center bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+                    <div key={i} className="flex justify-between items-center bg-pink-50/50 p-2.5 rounded-xl border border-pink-100">
                       <div>
-                        <p className="font-bold text-xs">{c.nama}</p>
-                        <p className="text-[10px] text-slate-400">{c.qty}x @ Rp {formatRupiahDisplay(c.harga)}</p>
+                        <p className="font-bold text-xs text-gray-800">{c.nama}</p>
+                        <p className="text-[10px] text-gray-500">{c.qty}x @ Rp {formatRupiahDisplay(c.harga)}</p>
                       </div>
-                      <p className="font-bold text-xs text-orange-400">Rp {formatRupiahDisplay(c.harga * c.qty)}</p>
+                      <p className="font-bold text-xs text-pink-600">Rp {formatRupiahDisplay(c.harga * c.qty)}</p>
                     </div>
                   ))
                 )}
@@ -371,22 +370,22 @@ export default function FooderiaSecureApp() {
             </div>
 
             <div>
-              <div className="border-t border-slate-800 pt-3 mb-3 space-y-1">
+              <div className="border-t border-pink-100 pt-3 mb-3 space-y-1">
                 <div className="flex justify-between items-center">
-                  <span className="font-bold text-xs text-slate-400">Total Pembayaran</span>
-                  <span className="text-xl font-black text-emerald-400">Rp {formatRupiahDisplay(totalCart)}</span>
+                  <span className="font-bold text-xs text-gray-500">Total Pembayaran</span>
+                  <span className="text-xl font-black text-pink-600">Rp {formatRupiahDisplay(totalCart)}</span>
                 </div>
                 {metodeBayar === 'Cash' && (
                   <div className="flex justify-between items-center">
-                    <span className="font-bold text-xs text-slate-400">Uang Kembalian</span>
-                    <span className={`text-base font-black ${kembalian >= 0 ? 'text-indigo-400' : 'text-red-400'}`}>
+                    <span className="font-bold text-xs text-gray-500">Uang Kembalian</span>
+                    <span className={`text-base font-black ${kembalian >= 0 ? 'text-pink-700' : 'text-red-500'}`}>
                       {kembalian >= 0 ? `Rp ${formatRupiahDisplay(kembalian)}` : 'Uang Kurang!'}
                     </span>
                   </div>
                 )}
               </div>
 
-              <button onClick={handleCheckout} disabled={cart.length === 0 || (metodeBayar === 'Cash' && uangTunaiNilai < totalCart)} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-800 disabled:text-slate-500 text-white font-bold py-3.5 rounded-2xl transition-all">
+              <button onClick={handleCheckout} disabled={cart.length === 0 || (metodeBayar === 'Cash' && uangTunaiNilai < totalCart)} className="w-full bg-pink-600 hover:bg-pink-700 disabled:bg-gray-100 disabled:text-gray-400 text-white font-bold py-3.5 rounded-2xl transition-all shadow-md">
                 Proses Pembayaran (Checkout)
               </button>
             </div>
@@ -395,27 +394,27 @@ export default function FooderiaSecureApp() {
       )}
 
       {activeTab === 'admin-report' && isAdmin && (
-        <div className="bg-slate-800/45 border border-slate-800 p-6 rounded-3xl">
+        <div className="bg-white border border-pink-200 p-6 rounded-3xl shadow-sm">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold text-slate-200">Riwayat & Rekapitulasi Pendapatan Global</h2>
-            <span className="bg-emerald-500/10 text-emerald-400 text-xs px-3 py-1 rounded-full border border-emerald-500/20 font-bold">
+            <h2 className="text-xl font-bold text-gray-800">Riwayat & Rekapitulasi Pendapatan Global</h2>
+            <span className="bg-pink-50 text-pink-600 text-xs px-3 py-1 rounded-full border border-pink-200 font-bold">
               Total Omset: Rp {formatRupiahDisplay(summary.total_omset)}
             </span>
           </div>
 
           <div className="space-y-3">
             {transaksi.map((trx: any) => (
-              <div key={trx.id} className="bg-slate-800 border border-slate-700/60 p-4 rounded-2xl flex justify-between items-center">
+              <div key={trx.id} className="bg-pink-50/30 border border-pink-100 p-4 rounded-2xl flex justify-between items-center shadow-sm">
                 <div>
                   <div className="flex items-center gap-3">
-                    <span className="font-bold text-white text-sm">{trx.id_transaksi}</span>
-                    <span className="bg-orange-500/10 text-orange-400 text-[10px] px-2 py-0.5 rounded font-semibold">{trx.metode}</span>
+                    <span className="font-bold text-gray-800 text-sm">{trx.id_transaksi}</span>
+                    <span className="bg-pink-100 text-pink-700 text-[10px] px-2 py-0.5 rounded font-semibold">{trx.metode}</span>
                   </div>
-                  <p className="text-xs text-slate-400 mt-1">Pelanggan: <strong className="text-slate-200">{trx.pelanggan}</strong> | {trx.waktu}</p>
+                  <p className="text-xs text-gray-500 mt-1">Pelanggan: <strong className="text-gray-800">{trx.pelanggan}</strong> | {trx.waktu}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-black text-emerald-400 text-base">Rp {formatRupiahDisplay(trx.total)}</p>
-                  <span className="text-[10px] text-emerald-500 font-bold uppercase">{trx.status}</span>
+                  <p className="font-black text-pink-600 text-base">Rp {formatRupiahDisplay(trx.total)}</p>
+                  <span className="text-[10px] text-pink-600 font-bold uppercase">{trx.status}</span>
                 </div>
               </div>
             ))}
@@ -424,34 +423,34 @@ export default function FooderiaSecureApp() {
       )}
 
       {activeTab === 'menu-manager' && isAdmin && (
-        <div className="max-w-2xl mx-auto bg-slate-800/45 border border-slate-800 p-8 rounded-3xl">
-          <h2 className="text-xl font-bold mb-6 text-slate-200">Tambah Menu Baru ke Database</h2>
+        <div className="max-w-2xl mx-auto bg-white border border-pink-200 p-8 rounded-3xl shadow-sm">
+          <h2 className="text-xl font-bold mb-6 text-gray-800">Tambah Menu Baru ke Database</h2>
           <form onSubmit={handleSimpanMenu} className="space-y-4">
             <div>
-              <label className="text-xs font-bold text-slate-400 uppercase">Nama Menu</label>
-              <input type="text" required value={formMenu.nama} onChange={(e) => setFormMenu({...formMenu, nama: e.target.value})} placeholder="Cth: Es Teh Manis" className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-orange-500" />
+              <label className="text-xs font-bold text-gray-600 uppercase">Nama Menu</label>
+              <input type="text" required value={formMenu.nama} onChange={(e) => setFormMenu({...formMenu, nama: e.target.value})} placeholder="Cth: Es Teh Manis" className="w-full mt-1 bg-white border border-pink-200 rounded-xl p-3 text-sm text-gray-800 focus:outline-none focus:border-pink-500" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="text-xs font-bold text-slate-400 uppercase">Harga (Rp)</label>
+                <label className="text-xs font-bold text-gray-600 uppercase">Harga (Rp)</label>
                 <div className="relative mt-1">
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 font-bold text-sm">Rp</span>
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400 font-bold text-sm">Rp</span>
                   <input 
                     type="text" 
                     required 
                     value={hargaMenuDisplay} 
                     onChange={handleHargaMenuChange} 
                     placeholder="25.000" 
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 pl-10 pr-3 text-sm text-white focus:outline-none focus:border-orange-500 font-semibold" 
+                    className="w-full bg-white border border-pink-200 rounded-xl py-3 pl-10 pr-3 text-sm text-gray-800 focus:outline-none focus:border-pink-500 font-semibold" 
                   />
                 </div>
               </div>
               <div>
-                <label className="text-xs font-bold text-slate-400 uppercase">Stok Awal</label>
-                <input type="number" required value={formMenu.stok} onChange={(e) => setFormMenu({...formMenu, stok: e.target.value})} placeholder="Cth: 100" className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-orange-500" />
+                <label className="text-xs font-bold text-gray-600 uppercase">Stok Awal</label>
+                <input type="number" required value={formMenu.stok} onChange={(e) => setFormMenu({...formMenu, stok: e.target.value})} placeholder="Cth: 100" className="w-full mt-1 bg-white border border-pink-200 rounded-xl p-3 text-sm text-gray-800 focus:outline-none focus:border-pink-500" />
               </div>
             </div>
-            <button type="submit" className="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 rounded-2xl mt-4 transition-all">
+            <button type="submit" className="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 rounded-2xl mt-4 transition-all shadow-md">
               Simpan ke Database
             </button>
           </form>

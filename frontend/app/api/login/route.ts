@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/app/lib/db';
-
+import db from "@/app/lib/db";
 export async function POST(req: Request) {
   try {
     const { username, password } = await req.json();

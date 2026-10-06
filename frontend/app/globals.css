@@ -1,26 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
-  --background: #fff5f8; /* Pink sangat muda / soft pink background */
-  --foreground: #372830;
+  --background: #fff5f8; /* Pink sangat lembut untuk background */
+  --foreground: #2d1b24; /* Teks warna gelap yang senada */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a0f14; /* Mode gelap dengan nuansa pink gelap yang elegan */
+    --foreground: #fce7f3;
+  }
 }
 
 body {
-  background-color: var(--background);
+  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Kustomisasi Scrollbar agar bernuansa pink */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #fff5f8;
-}
-::-webkit-scrollbar-thumb {
-  background: #f472b6;
-  border-radius: 4px;
 }
